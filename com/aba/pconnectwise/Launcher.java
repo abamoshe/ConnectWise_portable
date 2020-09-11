@@ -22,7 +22,7 @@ public class Launcher {
 
     private static void addTrayIcon() throws AWTException, IOException {
         SystemTray tray = SystemTray.getSystemTray();
-        TrayIcon trayIcon = new TrayIcon(ImageIO.read(Launcher.class.getResourceAsStream("/ScreenConnect.png")));
+        TrayIcon trayIcon = new TrayIcon(ImageIO.read(Launcher.class.getResourceAsStream("/resources/ScreenConnect.png")));
         trayIcon.setImageAutoSize(true);
 
         MenuItem menuExit = new MenuItem("exit");
