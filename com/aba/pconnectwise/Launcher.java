@@ -1,3 +1,5 @@
+package com.aba.pconnectwise;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -5,14 +7,14 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
-public class Main {
+public class Launcher {
     private static String[] args;
 
     private static final boolean portable = new File(".\\ScreenConnect").exists();
     private static Process[] beachShellScripts;
 
     public static void main(String[] args) throws IOException, InterruptedException, AWTException {
-        Main.args = args;
+        Launcher.args = args;
         runTheServer(true);
         addTrayIcon();
         handleScripts(true);
@@ -20,7 +22,7 @@ public class Main {
 
     private static void addTrayIcon() throws AWTException, IOException {
         SystemTray tray = SystemTray.getSystemTray();
-        TrayIcon trayIcon = new TrayIcon(ImageIO.read(Main.class.getResourceAsStream("/ScreenConnect.png")));
+        TrayIcon trayIcon = new TrayIcon(ImageIO.read(Launcher.class.getResourceAsStream("/ScreenConnect.png")));
         trayIcon.setImageAutoSize(true);
 
         MenuItem menuExit = new MenuItem("exit");
